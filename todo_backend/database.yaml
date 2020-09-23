@@ -2,4 +2,4 @@ username: postgres
 password: postgres
 host: localhost
 port: 5432
-databaseName: tododb;
+databaseName: tododb2;

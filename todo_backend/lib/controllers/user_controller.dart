@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:todo_backend/models/user_model.dart';
 import 'package:todo_backend/todo_backend.dart';
 import 'package:todo_backend/utils/utils.dart';

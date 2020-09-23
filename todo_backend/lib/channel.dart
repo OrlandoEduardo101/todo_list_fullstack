@@ -1,6 +1,9 @@
 
 import 'package:todo_backend/controllers/todo_controller.dart';
 
+import 'controllers/session_controller.dart';
+import 'controllers/user_controller.dart';
+import 'middlewares/ jwt_middleware.dart';
 import 'todo_backend.dart';
 
 /// This type initializes an application.
@@ -24,7 +27,7 @@ class TodoBackendChannel extends ApplicationChannel {
 
     final dataModel = ManagedDataModel.fromCurrentMirrorSystem();
     final persistentStore = PostgreSQLPersistentStore.fromConnectionInfo(
-        "postgres", "postgres", "localhost", 5432, "tododb");
+        "postgres", "postgres", "localhost", 5432, "tododb2");
     context = ManagedContext(dataModel, persistentStore);
   
   }
@@ -45,7 +48,11 @@ class TodoBackendChannel extends ApplicationChannel {
       return Response.ok({"key": "value"});
     });
 
-    router.route('/todo/[:id]').link(() => ToDoController(context));
+    router.route('/todo/[:id]').link(() => JwtMiddleware(context)).link(() => ToDoController(context));
+
+    router.route("/user/[:id]").link(() => UserController(context));
+
+    router.route("/session/[:id]").link(() => SessionController(context));
 
     return router;
   }
