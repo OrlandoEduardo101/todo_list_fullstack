@@ -11,3 +11,16 @@ Future main() async {
   print("Application started on port: ${app.options.port}.");
   print("Use Ctrl-C (SIGINT) to stop running the application.");
 }
+
+
+/*
+##########  Commands  ############
+docker exec postgres postgres -upostgres -p postgress
+docker container list
+docker exec -it 79c0a568f3cc bash
+# psql -U postgres
+docker stop 79c0a568f3cc
+aqueduct db generate
+aqueduct db upgrade --connect tododb2://postgres:postgres@localhost:5432/tododb2
+aqueduct serve
+*/
