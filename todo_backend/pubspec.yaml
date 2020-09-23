@@ -9,6 +9,7 @@ environment:
 dependencies:
   aqueduct: ^4.0.0-b1
   postgres: ^2.1.1
+  jaguar_jwt: ^2.1.6
 
 #dependency_overrides:
 #  postgres: 2.2.0

@@ -1,3 +1,4 @@
+import 'package:todo_backend/models/user_model.dart';
 import 'package:todo_backend/todo_backend.dart';
 
 class ToDoModel extends ManagedObject<_ToDoModel> implements _ToDoModel {}
@@ -8,10 +9,13 @@ class _ToDoModel {
   int id;
   String name;
   bool done;
+
+  @Relate(#toDo)
+  UserModel user; 
 }
 
 
- /* @override
+/* @override
   Map<String, dynamic> asMap() {
     return {'id': id, 'name': name, 'done': done};
   }

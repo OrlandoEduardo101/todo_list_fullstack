@@ -38,6 +38,12 @@
       "languageVersion": "2.2"
     },
     {
+      "name": "auth_header",
+      "rootUri": "file:///home/orlando-eduardo101/.pub-cache/hosted/pub.dartlang.org/auth_header-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///home/orlando-eduardo101/.pub-cache/hosted/pub.dartlang.org/boolean_selector-1.0.5",
       "packageUri": "lib/",
@@ -130,6 +136,12 @@
     {
       "name": "isolate_executor",
       "rootUri": "file:///home/orlando-eduardo101/.pub-cache/hosted/pub.dartlang.org/isolate_executor-2.0.2+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "jaguar_jwt",
+      "rootUri": "file:///home/orlando-eduardo101/.pub-cache/hosted/pub.dartlang.org/jaguar_jwt-2.1.6",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -392,7 +404,7 @@
       "languageVersion": "2.0"
     }
   ],
-  "generated": "2020-09-23T11:36:23.788813Z",
+  "generated": "2020-09-23T18:40:08.793565Z",
   "generator": "pub",
   "generatorVersion": "2.9.3"
 }
