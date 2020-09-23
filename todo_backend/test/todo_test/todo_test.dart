@@ -11,11 +11,13 @@ Future main() async {
     final toDoController = ToDoController(context);
     expect((await toDoController.getAllToDos()).statusCode, equals(200));
   });
+  
   test('todo post', () async {
     final toDoController = ToDoController(context);
 
     expect((await toDoController.postTodo()).statusCode, equals(200));
   });
+
   test('todo put', () async {
     final toDoController = ToDoController(context);
     final body = ToDoModel()..read(await request.body.decode(), ignore: ["id"]);
