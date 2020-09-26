@@ -7,6 +7,7 @@ environment:
   sdk: ">=2.0.0 <3.0.0"
 
 dependencies:
+  array_frequency_calculator: ^1.0.0
   aqueduct: ^4.0.0-b1
   postgres: ^2.1.1
   jaguar_jwt: ^2.1.6

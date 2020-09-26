@@ -3,15 +3,18 @@ import 'package:test/test.dart';
 import 'package:todo_backend/controllers/todo_controller.dart';
 import 'package:todo_backend/models/todo_model.dart';
 import 'package:todo_backend/todo_backend.dart';
+import 'package:array_frequency_calculator/array_frequency_calculator.dart'
+    as frequency;
 
 Future main() async {
   ManagedContext context;
   Request request;
   test('todo get all', () async {
+    print(frequency.WordsCalculator('Fala zeze zeze fala fala'));
     final toDoController = ToDoController(context);
-    expect((await toDoController.getAllToDos()).statusCode, equals(200));
+    //expect((await toDoController.getAllToDos()).statusCode, equals(200));
   });
-  
+
   test('todo post', () async {
     final toDoController = ToDoController(context);
 

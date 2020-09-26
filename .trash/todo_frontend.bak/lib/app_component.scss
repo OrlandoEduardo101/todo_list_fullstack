@@ -1,0 +1,20 @@
+
+@import "package:bulma_sass/scss/utilities/initial-variables";
+@import "package:bulma_sass/scss/utilities/functions";
+
+@import "package:bulma_sass/scss/bulma";
+@import url("https://cdn.jsdelivr.net/npm/bulma-extensions@4.0.0/bulma-switch/dist/css/bulma-switch.min.css");
+
+.is-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+@import url(/packages/font_awesome/css/all.css); /* font_awesome css file is imported here */
+
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;        /* for single line flex container */
+  align-content: center;    
+}
