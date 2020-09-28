@@ -26,6 +26,7 @@ scripts:
     mobx_build: $runner build
     mobx_watch: $clean & $get & $runner watch
     mobx_build_clean: $clean & $get & $runner build --delete-conflicting-outputs
+    mobx_watch_clean: $clean & $get & $runner watch --delete-conflicting-outputs
 
 
 
@@ -33,7 +34,9 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  dio: ^3.0.10
+  dio: 3.0.9
+  path_provider: ^1.6.18
+  hive: ^1.4.4
   flutter_mobx: ^1.1.0+2
   mobx: ^1.2.1+2
   flutter_modular: ^2.0.1

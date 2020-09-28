@@ -19,9 +19,28 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        children: <Widget>[],
-      ),
+      body: Center(
+        child:  Column(
+        children: <Widget>[
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'email'
+            ),
+            onChanged: controller.setEmail,
+          ),
+          Padding(padding: EdgeInsets.all(10)),
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'password'
+            ),
+            onChanged: controller.setPassword,
+          ),
+          Padding(padding: EdgeInsets.all(10)),
+          FlatButton(onPressed: controller.login, child: Text('Login'), color: Colors.orange,),
+          FlatButton(onPressed: () => Modular.link.pushNamed('/register'), child: Text('Registrar'), color: Colors.lightGreenAccent,)
+        ],
+        ),
+      )
     );
   }
 }

@@ -1,5 +1,7 @@
+import 'package:dio/dio.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:todo_frontend_flutter/app/shared/auth/auth_controller.dart';
 
 part 'login_controller.g.dart';
 
@@ -7,11 +9,27 @@ part 'login_controller.g.dart';
 class LoginController = _LoginControllerBase with _$LoginController;
 
 abstract class _LoginControllerBase with Store {
+  AuthController auth = Modular.get();
   @observable
-  int value = 0;
+  String email;
+
+  @observable
+  String password;
+
+  _LoginControllerBase();
 
   @action
-  void increment() {
-    value++;
+  String setEmail(value) => email = value;
+
+  @action
+  String setPassword(value) => password = value;
+
+  Future<void> login() async {
+    Response user = await auth.getLogin(email, password);
+    if (user.data['auth']) {
+      Modular.to.pushNamed('home');
+    } else {
+      print('Error ${user.statusCode} ${user.statusMessage}');
+    }
   }
 }

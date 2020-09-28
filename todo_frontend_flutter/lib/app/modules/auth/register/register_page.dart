@@ -20,9 +20,34 @@ class _RegisterPageState
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        children: <Widget>[],
-      ),
+      body: Center(
+        child:  Column(
+        children: <Widget>[
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'name'
+            ),
+            onChanged: controller.setName,
+          ),
+          Padding(padding: EdgeInsets.all(10)),
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'email'
+            ),
+            onChanged: controller.setEmail,
+          ),
+          Padding(padding: EdgeInsets.all(10)),
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'password'
+            ),
+            onChanged: controller.setPassword,
+          ),
+          Padding(padding: EdgeInsets.all(10)),
+          FlatButton(onPressed: controller.register, child: Text('Registrar'), color: Colors.lightGreenAccent,)
+        ],
+        ),
+      )
     );
   }
 }

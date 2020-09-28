@@ -1,3 +1,6 @@
+import 'package:todo_frontend_flutter/app/modules/auth/login/login_page.dart';
+import 'package:todo_frontend_flutter/app/modules/auth/register/register_page.dart';
+
 import 'register/register_controller.dart';
 import 'login/login_controller.dart';
 import 'auth_controller.dart';
@@ -15,7 +18,8 @@ class AuthModule extends ChildModule {
 
   @override
   List<ModularRouter> get routers => [
-        ModularRouter(Modular.initialRoute, child: (_, args) => AuthPage()),
+        ModularRouter(Modular.initialRoute, child: (_, args) => LoginPage()),
+        ModularRouter('/register', child: (_, args) => RegisterPage()),
       ];
 
   static Inject get to => Inject<AuthModule>.of();
