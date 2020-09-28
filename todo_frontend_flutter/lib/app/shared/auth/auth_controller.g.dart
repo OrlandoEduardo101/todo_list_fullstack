@@ -49,6 +49,21 @@ mixin _$AuthController on _AuthControllerBase, Store {
     });
   }
 
+  final _$tokenAtom = Atom(name: '_AuthControllerBase.token');
+
+  @override
+  String get token {
+    _$tokenAtom.reportRead();
+    return super.token;
+  }
+
+  @override
+  set token(String value) {
+    _$tokenAtom.reportWrite(value, super.token, () {
+      super.token = value;
+    });
+  }
+
   final _$getLoginAsyncAction = AsyncAction('_AuthControllerBase.getLogin');
 
   @override
@@ -74,7 +89,8 @@ mixin _$AuthController on _AuthControllerBase, Store {
   String toString() {
     return '''
 status: ${status},
-response: ${response}
+response: ${response},
+token: ${token}
     ''';
   }
 }

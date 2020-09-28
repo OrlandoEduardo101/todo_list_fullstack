@@ -19,8 +19,11 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
+      body:Center(
+      child: ConstrainedBox(constraints: BoxConstraints(maxHeight: 600, maxWidth: 600),
         child:  Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           TextField(
             decoration: InputDecoration(
@@ -40,6 +43,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
           FlatButton(onPressed: () => Modular.link.pushNamed('/register'), child: Text('Registrar'), color: Colors.lightGreenAccent,)
         ],
         ),
+      ),
       )
     );
   }

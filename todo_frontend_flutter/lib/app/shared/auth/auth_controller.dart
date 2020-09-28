@@ -19,6 +19,9 @@ abstract class _AuthControllerBase with Store {
   @observable
   Response response;
 
+  @observable
+  String token;
+
   @action
   setUser(Map user) {
     print("token $user");
@@ -37,6 +40,7 @@ abstract class _AuthControllerBase with Store {
 
     storage.putToken('user', response.data);
     status = AuthStatus.login;
+    token = response.data['token'];
     return response;
   }
 

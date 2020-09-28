@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+import 'repository/todo_repository.dart';
 import 'home_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -6,6 +8,7 @@ import 'home_page.dart';
 class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
+        $TodoRepository,
         $HomeController,
       ];
 

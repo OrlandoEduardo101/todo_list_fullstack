@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:dio/native_imp.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:todo_frontend_flutter/app/shared/models/todo_model.dart';
 import 'package:todo_frontend_flutter/app/shared/utils/constants.dart';
 
 import 'interfaces/auth_repository_interface.dart';
